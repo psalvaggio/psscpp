@@ -9,8 +9,6 @@
 
 #include <type_traits>
 
-#include "psscpp/macros.h"
-
 namespace pss {
 
 /// Tests if the decayed types of the two arguments are the same

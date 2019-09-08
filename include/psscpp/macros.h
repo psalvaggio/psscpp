@@ -6,7 +6,17 @@
  */
 
 /// Selects a macro based on the number of arguments
-#define PSS_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, NAME, ...) NAME
+/// \{
+#define PSS_GET_MACRO2(_1, _2, NAME, ...) NAME
+#define PSS_GET_MACRO3(_1, _2, _3, NAME, ...) NAME
+#define PSS_GET_MACRO4(_1, _2, _3, _4, NAME, ...) NAME
+#define PSS_GET_MACRO5(_1, _2, _3, _4, _5, NAME, ...) NAME
+#define PSS_GET_MACRO6(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
+#define PSS_GET_MACRO7(_1, _2, _3, _4, _5, _6, _7, NAME, ...) NAME
+#define PSS_GET_MACRO8(_1, _2, _3, _4, _5, _6, _7, _8, NAME, ...) NAME
+#define PSS_GET_MACRO9(_1, _2, _3, _4, _5, _6, _7, _8, _9, NAME, ...) NAME
+#define PSS_GET_MACRO10(_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, NAME, ...) NAME
+/// \}
 
 /// Helper macro for PSS_TEMPLATE_PARAMS
 /// \{
@@ -23,9 +33,10 @@
 /// \}
 
 /// Takes a list of template parameter names and prepends "class" to each one
-#define PSS_TEMPLATE_PARAMS(...)                                          \
-  PSS_GET_MACRO(__VA_ARGS__, PSS_TEMPLATE_PARAMS10, PSS_TEMPLATE_PARAMS9, \
-                PSS_TEMPLATE_PARAMS8, PSS_TEMPLATE_PARAMS7,               \
-                PSS_TEMPLATE_PARAMS6, PSS_TEMPLATE_PARAMS5,               \
-                PSS_TEMPLATE_PARAMS4, PSS_TEMPLATE_PARAMS3,               \
-                PSS_TEMPLATE_PARAMS2, PSS_TEMPLATE_PARAMS1)(__VA_ARGS__)
+#define PSS_TEMPLATE_PARAMS(...)                                            \
+  PSS_GET_MACRO10(__VA_ARGS__, PSS_TEMPLATE_PARAMS10, PSS_TEMPLATE_PARAMS9, \
+                  PSS_TEMPLATE_PARAMS8, PSS_TEMPLATE_PARAMS7,               \
+                  PSS_TEMPLATE_PARAMS6, PSS_TEMPLATE_PARAMS5,               \
+                  PSS_TEMPLATE_PARAMS4, PSS_TEMPLATE_PARAMS3,               \
+                  PSS_TEMPLATE_PARAMS2, PSS_TEMPLATE_PARAMS1)               \
+  (__VA_ARGS__)
